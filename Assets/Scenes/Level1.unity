@@ -24039,6 +24039,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1ac4b83e007934dac2e3d4f6e46498, type: 3}
+--- !u!1001 &3209797812394626793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325253644470551417, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677502593357668883, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
+      propertyPath: m_Name
+      value: Totem Trap
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: daaff9b3cf738c2469f90a51ac8fbe74, type: 3}
 --- !u!1001 &7396728728995295805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24149,3 +24206,4 @@ SceneRoots:
   - {fileID: 366394766}
   - {fileID: 1527098162}
   - {fileID: 1640619589}
+  - {fileID: 3209797812394626793}
