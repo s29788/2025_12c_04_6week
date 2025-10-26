@@ -32,6 +32,18 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
+        bool wasGrounded = isGrounded;
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        anim.SetBool("IsGrounded", isGrounded);
+
+        // jeśli dopiero co wylądował -> zresetuj triggery animacji powietrznych
+        if (!wasGrounded && isGrounded)
+        {
+            anim.ResetTrigger("Jump");
+            anim.ResetTrigger("AttackAir");
+            anim.ResetTrigger("AttackGround");
+        }
+
         // --- INPUT (nowy Input System) ---
         var kb = Keyboard.current;
         moveInput = 0f;
@@ -40,16 +52,13 @@ public class PlayerController2D : MonoBehaviour
             if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)  moveInput -= 1f;
             if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput += 1f;
 
-            if (kb.spaceKey.wasPressedThisFrame)
+            if (kb.spaceKey.wasPressedThisFrame && isGrounded)
                 wantJump = true;
         }
 
         // --- FLIP SPRITE ---
         if (moveInput != 0f)
             sr.flipX = moveInput < 0f;
-
-        // (Uwaga: nie ustawiamy anim parametrów tutaj, żeby były spójne z fizyką;
-        // robimy to w FixedUpdate po policzeniu kolizji/rb.velocity)
     }
 
     void FixedUpdate()
@@ -63,7 +72,11 @@ public class PlayerController2D : MonoBehaviour
         // --- SKOK ---
         if (wantJump && isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // dla powtarzalności skoku
+            // odpalenie triggera skoku (animacja JumpUp)
+            anim.SetTrigger("Jump");
+
+            // wyzerowanie pionowej prędkości, by skoki były powtarzalne
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         wantJump = false;
