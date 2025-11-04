@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1946178319552832164}
   - component: {fileID: 796613435788595213}
   m_Layer: 0
-  m_Name: Totem Trap
+  m_Name: Totem Trap L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

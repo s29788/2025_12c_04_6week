@@ -11,14 +11,14 @@ public class Spike : MonoBehaviour
         else Debug.LogError("Brak obiektu z tagiem 'Respawn' w scenie!");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player") && respawnPoint != null)
+        if (other.CompareTag("Player") && respawnPoint != null)
         {
-            var rb = collision.attachedRigidbody;
+            var rb = other.attachedRigidbody;
             if (rb) rb.linearVelocity = Vector2.zero;
 
-            collision.transform.position = respawnPoint.position;
+            other.transform.position = respawnPoint.position;
         }
     }
 }
