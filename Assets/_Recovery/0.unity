@@ -22198,10 +22198,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.078125
+    x: 0
     y: 0
-    width: 0.84375
-    height: 1
+    width: 0
+    height: 0
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -23733,14 +23733,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   attackDamage: 0
-  attackRadius: 0.7
+  attackRadius: 1.2
   attackPoint: {fileID: 1925441708}
-  layer:
-    serializedVersion: 2
-    m_Bits: 128
-  player: {fileID: 1860657374}
-  attackRange: 1.5
-  attackCooldown: 2
+  attackRange: 0
+  attackCooldown: 0
 --- !u!4 &1327980787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7588778482989566542, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
@@ -24432,7 +24428,7 @@ GameObject:
   - component: {fileID: 1860657380}
   - component: {fileID: 1860657381}
   - component: {fileID: 1860657382}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -24691,7 +24687,7 @@ Transform:
   m_GameObject: {fileID: 1925441707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.137, y: 0.026, z: 0}
+  m_LocalPosition: {x: -0.248, y: 0.039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24754,10 +24750,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 592237885113301882, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 592237885113301882, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1860657374}
@@ -24783,7 +24775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 592237885113301882, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
       propertyPath: playerAwareness
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4095355820827912133, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
       propertyPath: m_Size.x

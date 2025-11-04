@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anticipation
+  m_Name: Dead Ground
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -4472922553096397091, guid: 903fd3856eff1c64594243628c6d5213, type: 3}
+      value: {fileID: 3892838150563630428, guid: 1f7c3fe0e74b7e34395596575d3a47bf, type: 3}
     - time: 0.016666668
-      value: {fileID: -921038419151387264, guid: a9206e242caa6494690d696c6f5e4c3e, type: 3}
+      value: {fileID: 6610420773212145959, guid: adba84a99697ca9428ac96aa501dbc06, type: 3}
     - time: 0.033333335
-      value: {fileID: -3121235823299523101, guid: 004e8d53cb312564b820b551d6473ee4, type: 3}
+      value: {fileID: -3580108318400642874, guid: eba64e487bfde1d4fa54784895ec52ec, type: 3}
+    - time: 0.05
+      value: {fileID: -180116984242975545, guid: ea7c50b36a7537448a18bc04dfde9aa8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -4472922553096397091, guid: 903fd3856eff1c64594243628c6d5213, type: 3}
-    - {fileID: -921038419151387264, guid: a9206e242caa6494690d696c6f5e4c3e, type: 3}
-    - {fileID: -3121235823299523101, guid: 004e8d53cb312564b820b551d6473ee4, type: 3}
+    - {fileID: 3892838150563630428, guid: 1f7c3fe0e74b7e34395596575d3a47bf, type: 3}
+    - {fileID: 6610420773212145959, guid: adba84a99697ca9428ac96aa501dbc06, type: 3}
+    - {fileID: -3580108318400642874, guid: eba64e487bfde1d4fa54784895ec52ec, type: 3}
+    - {fileID: -180116984242975545, guid: ea7c50b36a7537448a18bc04dfde9aa8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.050000004
+    m_StopTime: 0.06666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,11 +78,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0
-    functionName: StopRunning
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float health;
-    [SerializeField] private HealthBar healthBar;
+    public float health;
+    public HealthBar healthBar;
+    private Animator animator;
+    
+    void Awake(){
+        animator = GetComponent<Animator>();
+    }
 
     void Start(){
         healthBar.SetMaxHealth(health);
@@ -12,9 +17,9 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage){
         health -= damage;
         healthBar.SetHealth(health);
-        
-        if(health <= 0)
-            Die();
+
+        if(health <= 0) animator.SetBool("isDead", true);
+        else animator.Play("Hit");
     }
 
     public void Die(){
