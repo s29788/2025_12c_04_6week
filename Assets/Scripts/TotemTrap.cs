@@ -2,16 +2,11 @@ using UnityEngine;
 
 public class TotemTrap : MonoBehaviour
 { 
-    [HideInInspector] public Animator _anim;
-
-    public Animator GetAnimator()
-    {
-        return _anim;
-    }
+    [HideInInspector] public Animator anim;
     
     private void Awake()
     {
-        _anim = GetComponent<Animator>();
-        _anim.SetBool("isAttacking", false);
+        anim = GetComponent<Animator>();
+        anim.SetBool("isAttacking", false);
     }
 }

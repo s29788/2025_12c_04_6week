@@ -7,20 +7,16 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private float _cooldown;
     [SerializeField] private string _attackAnimationStateName = "Attack"; 
     [SerializeField] private float _transitionDuration = 0.1f;
-    private Animator _anim;
+    private TotemTrap _totemTrap;
 
     private void Awake()
     {
-        _anim = GetComponentInParent<TotemTrap>().GetAnimator();
-        if (_anim == null)
-        {
-            Debug.LogError("Animator component not found! Make sure it is attached to the parent object.");
-        }
+        _totemTrap = GetComponentInParent<TotemTrap>();
     }
     
     private void Start()
     {
-        if (_anim != null)
+        if (_totemTrap.anim != null)
         {
             StartCoroutine(SpawnCoroutine());
         }
@@ -30,10 +26,10 @@ public class ProjectileSpawner : MonoBehaviour
     {
         while (true)
         {
-            _anim.SetBool("isAttacking", true);
+            _totemTrap.anim.SetTrigger("Attack");
             yield return new WaitForSeconds(_transitionDuration); 
             
-            AnimatorStateInfo stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
+            AnimatorStateInfo stateInfo = _totemTrap.anim.GetCurrentAnimatorStateInfo(0);
             float animationClipLength = 0f;
             
             if (stateInfo.IsName(_attackAnimationStateName))
@@ -42,8 +38,6 @@ public class ProjectileSpawner : MonoBehaviour
             Instantiate(_projectilePrefab, transform.position, transform.rotation);
             
             yield return new WaitForSeconds(animationClipLength); 
-            
-            _anim.SetBool("isAttacking", false);
             
             float remainingCooldown = _cooldown - animationClipLength - _transitionDuration;
             
