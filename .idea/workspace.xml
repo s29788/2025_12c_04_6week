@@ -7,13 +7,16 @@
     <list default="true" id="cbe7e524-eed6-45e6-97e0-82d9c9798a7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AttackScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AttackScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Animations/DustPoof.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Animations/DustPoof.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Animations/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Gold Coin/04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Tilemaps/Terrain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Tilemaps/Terrain.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerDeath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,21 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Temp__merge2",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,6 +89,7 @@
       <workItem from="1762088769882" duration="2443000" />
       <workItem from="1762092719948" duration="617000" />
       <workItem from="1762093477164" duration="926000" />
+      <workItem from="1762265290648" duration="2578000" />
     </task>
     <servers />
   </component>

@@ -880,10 +880,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.3728643
+    x: 0.05497862
     y: 0
-    width: 0.5562814
-    height: 0.70285714
+    width: 0.88973737
+    height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -1347,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1
+      value: Merge2
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1873,7 +1873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1
+      value: Merge2
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1945,7 +1945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -76.51
+      value: -76.51001
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
