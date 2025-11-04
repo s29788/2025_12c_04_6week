@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerCombat2D : MonoBehaviour
 {
@@ -37,7 +36,7 @@ public class PlayerCombat2D : MonoBehaviour
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         rb   = GetComponent<Rigidbody2D>();
         defaultGravityScale = rb.gravityScale;
 

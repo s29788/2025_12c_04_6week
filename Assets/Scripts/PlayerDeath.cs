@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerDeath : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class PlayerDeath : MonoBehaviour
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         rb   = GetComponent<Rigidbody2D>();
 
         // Jeśli nie przypięto respawnu, spróbuj po tagu

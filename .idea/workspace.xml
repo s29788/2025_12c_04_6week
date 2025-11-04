@@ -7,52 +7,13 @@
     <list default="true" id="cbe7e524-eed6-45e6-97e0-82d9c9798a7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Clown Nose.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Clown Nose.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/11-Jump Sword/Jump Sword 03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/12-Fall Sword/Fall Sword 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/12-Fall Sword/Fall Sword 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/Attack 2 03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/CptAttack2.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/16-Attack 2/CptAttack2.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/CptAirAttack2.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/CptAirAttack2.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/20-Throw Sword/CptSwordThrow.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/20-Throw Sword/CptSwordThrow.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Fall.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Fall.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Jump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Jump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Run.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Run.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/TextureImporter.preset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/TextureImporter.preset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Merge_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Merge_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AttackScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AttackScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spike.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerDeath.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +79,13 @@
       <workItem from="1761492331970" duration="1768000" />
       <workItem from="1761502737298" duration="24000" />
       <workItem from="1761504292863" duration="87000" />
+      <workItem from="1762087154582" duration="2000" />
+      <workItem from="1762087170273" duration="7000" />
+      <workItem from="1762088385101" duration="286000" />
+      <workItem from="1762088685378" duration="66000" />
+      <workItem from="1762088769882" duration="2443000" />
+      <workItem from="1762092719948" duration="617000" />
+      <workItem from="1762093477164" duration="926000" />
     </task>
     <servers />
   </component>
