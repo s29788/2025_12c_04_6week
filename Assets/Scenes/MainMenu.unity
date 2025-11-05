@@ -880,9 +880,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.05497862
+    x: 0.09326073
     y: 0
-    width: 0.88973737
+    width: 0.81381893
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
@@ -913,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0910006, y: -2.9359999, z: -10}
+  m_LocalPosition: {x: 79.3, y: -23.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2458,7 +2458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2469,11 +2469,19 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1527098163}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
@@ -2485,8 +2493,12 @@ PrefabInstance:
       value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level2
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 6422063116453582628, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
