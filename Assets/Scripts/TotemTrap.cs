@@ -7,6 +7,5 @@ public class TotemTrap : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool("isAttacking", false);
     }
 }
