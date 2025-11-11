@@ -12,12 +12,19 @@ public class EnemyMovement : MonoBehaviour
     public GameObject pointB;
     private Transform currentPoint;
     public float speed = 4f;
-    private bool isFacingRight = true;
+    private bool isFacingLeft = true;
     private bool isRunning = false;
     
     public GameObject player;
     public float playerAwareness;
     private bool inRange = false;
+
+    public Vector2 knockback = new Vector2(2f, 4f);
+    
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
+    private bool isGrounded;
     
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +40,10 @@ public class EnemyMovement : MonoBehaviour
         else inRange = false;
     }
     void FixedUpdate(){
-        if(!inRange && isRunning){
+        
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        
+        if(!inRange && isRunning &&isGrounded){
             if(currentPoint == pointB.transform)
                 rb.linearVelocity = new Vector2(speed, 0);
             else
@@ -46,19 +56,22 @@ public class EnemyMovement : MonoBehaviour
                 Flip();
                 currentPoint = pointB.transform;
             }
-        }else if(inRange && isRunning){
+            if(isFacingLeft && currentPoint==pointB.transform || !isFacingLeft && currentPoint==pointA.transform) {
+                Flip();
+            }
+        }else if(inRange && isRunning && isGrounded){
             if(player.transform.position.x < transform.position.x){
-                if(!isFacingRight) Flip();
+                if(!isFacingLeft) Flip();
                 transform.Translate(Vector2.left * Time.deltaTime * speed);
             }else {
-                if(isFacingRight) Flip();
+                if(isFacingLeft) Flip();
                 transform.Translate(Vector2.right * Time.deltaTime * speed);
             }
         }
     }
     
     private void Flip(){
-        isFacingRight = !isFacingRight;
+        isFacingLeft = !isFacingLeft;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
@@ -77,9 +90,23 @@ public class EnemyMovement : MonoBehaviour
         isRunning = false;
     }
 
-    // void OnCollisionEnter2D(Collision2D collision){
-    //     if (collision.collider.tag == "Player") {
-    //         GetComponent<EnemyHealth>().TakeDamage(10);
-    //     }
-    // }
+    public void Knockback(){
+        Vector2 knockbackForce = knockback;
+        knockbackForce.x *= -GetDirection(player.transform);
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0;
+        rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+    }
+
+    public int GetDirection(Transform playerTransform){
+        if(transform.position.x > playerTransform.position.x)
+            return -1;
+        return 1;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Player"){
+            GetComponent<EnemyHealth>().TakeDamage(10);
+        }
+    }
 }

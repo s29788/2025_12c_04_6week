@@ -17,9 +17,11 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage){
         health -= damage;
         healthBar.SetHealth(health);
-
+        
         if(health <= 0) animator.SetBool("isDead", true);
         else animator.Play("Hit");
+        
+        GetComponent<EnemyMovement>().Knockback();
     }
 
     public void Die(){

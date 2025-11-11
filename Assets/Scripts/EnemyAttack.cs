@@ -22,12 +22,12 @@ public class EnemyAttack : MonoBehaviour
 
     void Update(){
         
-        if(UnityEngine.Vector2.Distance(transform.position, player.transform.position) <= attackRange && canAttack){
-            canAttack = false;
-            animator.Play("Anticipation");
-            
-            Invoke(nameof(ResetAttack), attackCooldown);
-        }
+        // if(UnityEngine.Vector2.Distance(transform.position, player.transform.position) <= attackRange && canAttack){
+        //     canAttack = false;
+        //     animator.Play("Anticipation");
+        //     
+        //     Invoke(nameof(ResetAttack), attackCooldown);
+        // }
     }
 
     public void Attack(){
