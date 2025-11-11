@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,6 +35,10 @@ public class PlayerController2D : MonoBehaviour
     private float jumpHoldTimer;     // ile jeszcze podtrzymania zostało
     private float defaultGravity;    // zapamiętana grawitacja
     private bool prevGrounded;       // do wykrycia lądowania (reset triggerów)
+    
+    // --- zmienne UI w grze --
+    [Header("In-Game UI")]
+    [SerializeField] private UIManager uiManager;   // <- przypnij ręcznie obiekt GameManager ze sceny
 
     void Awake()
     {
@@ -168,5 +173,16 @@ public class PlayerController2D : MonoBehaviour
         if (!groundCheck) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+            uiManager.coinCount++;
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            uiManager.deathCount++;
+            uiManager.deathText.GetComponent<Animator>().SetTrigger("playerDied");
+        }
     }
 }
