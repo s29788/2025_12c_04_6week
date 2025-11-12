@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 387700639}
   - component: {fileID: 387700638}
   - component: {fileID: 387700637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap - Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22260,9 +22260,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.078125
+    x: 0.15622163
     y: 0
-    width: 0.84375
+    width: 0.68801093
     height: 1
   near clip plane: 0.1
   far clip plane: 5000

@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 387700639}
   - component: {fileID: 387700638}
   - component: {fileID: 387700637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap - Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 387700635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22198,10 +22198,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.16210938
+    x: 0.15622163
     y: 0
-    width: 0.21445313
-    height: 0.25416666
+    width: 0.68801093
+    height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -24699,13 +24699,21 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1183429330}
+    - target: {fileID: 592237885113301882, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3169313572713698043, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.128
+      objectReference: {fileID: 0}
     - target: {fileID: 7588778482989566542, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.07
       objectReference: {fileID: 0}
     - target: {fileID: 7588778482989566542, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.55
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 7588778482989566542, guid: 3aa6ad794895673489b641e1ff5914f5, type: 3}
       propertyPath: m_LocalPosition.z
