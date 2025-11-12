@@ -22,18 +22,18 @@ public class EnemyAttack : MonoBehaviour
 
     void Update(){
         
-        // if(UnityEngine.Vector2.Distance(transform.position, player.transform.position) <= attackRange && canAttack){
-        //     canAttack = false;
-        //     animator.Play("Anticipation");
-        //     
-        //     Invoke(nameof(ResetAttack), attackCooldown);
-        // }
+        if(UnityEngine.Vector2.Distance(transform.position, player.transform.position) <= attackRange && canAttack){
+            canAttack = false;
+            animator.Play("Anticipation");
+            Invoke(nameof(ResetAttack), attackCooldown);
+        }
     }
 
     public void Attack(){
         Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, layer);
-        // if (hit)
-        //     hit.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        if(hit){
+            hit.GetComponent<PlayerDeath>().Kill();
+        }
     }
 
     public void ResetAttack(){

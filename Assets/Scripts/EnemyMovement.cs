@@ -81,6 +81,7 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
         Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
         Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 
     public void StartRunning(){
@@ -102,11 +103,5 @@ public class EnemyMovement : MonoBehaviour
         if(transform.position.x > playerTransform.position.x)
             return -1;
         return 1;
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.tag == "Player"){
-            GetComponent<EnemyHealth>().TakeDamage(10);
-        }
     }
 }
