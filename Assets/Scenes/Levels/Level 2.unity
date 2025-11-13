@@ -682,7 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -249.53003
+      value: -249.53006
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1801,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -422.55005
+      value: -422.55002
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5491,13 +5491,14 @@ MonoBehaviour:
   fallGravityMultiplier: 1.6
   lowJumpGravityMultiplier: 1.2
   groundCheck: {fileID: 1708412355}
-  groundCheckRadius: 0.2
+  groundBoxSize: {x: 0.6, y: 0.08}
+  groundBoxOffset: {x: 0, y: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
   anim: {fileID: 776870560}
   sr: {fileID: 776870561}
-  uiManager: {fileID: 1567944032}
+  coyoteTime: 0.08
 --- !u!61 &1451066425
 BoxCollider2D:
   m_ObjectHideFlags: 0

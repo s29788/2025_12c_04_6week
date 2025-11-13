@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,41 +9,40 @@ public class PlayerController2D : MonoBehaviour
 
     [Header("Skok (variable height)")]
     public float jumpForce = 12f;            // impuls startowy skoku
-    public float maxJumpHoldTime = 0.15f;    // ile możesz "dokarmiać" skok trzymając spację (s)
-    public float jumpHoldForce = 30f;        // siła podtrzymania podczas hold (Force w czasie)
-    public float jumpCutMultiplier = 0.5f;   // ucięcie skoku przy puszczeniu (0..1)
-    public float fallGravityMultiplier = 1.6f;     // mocniejsze opadanie
-    public float lowJumpGravityMultiplier = 1.2f;  // gdy nie trzymasz skoku wznosząc się
+    public float maxJumpHoldTime = 0.15f;    // jak długo trzymanie zwiększa skok
+    public float jumpHoldForce = 30f;        // siła podtrzymania podczas hold (Force)
+    public float jumpCutMultiplier = 0.5f;   // ucięcie skoku przy puszczeniu klawisza
+    public float fallGravityMultiplier = 1.6f;
+    public float lowJumpGravityMultiplier = 1.2f;
 
-    [Header("Ground check")]
-    public Transform groundCheck;
-    public float groundCheckRadius = 0.2f;
+    [Header("Ground check (prostokąt)")]
+    public Transform groundCheck;                // umieść na środku stóp
+    public Vector2 groundBoxSize = new Vector2(0.6f, 0.08f); // szerokość x wysokość
+    public Vector2 groundBoxOffset = Vector2.zero;           // ewentualne przesunięcie
     public LayerMask groundLayer;
 
     [Header("Wizual (PRZYPNIJ z PlayerVisual)")]
-    [SerializeField] private Animator anim;           // <- przypnij ręcznie Animator z PlayerVisual
-    [SerializeField] private SpriteRenderer sr;       // <- przypnij ręcznie SpriteRenderer z PlayerVisual
+    [SerializeField] private Animator anim;           // przypnij Animator z PlayerVisual
+    [SerializeField] private SpriteRenderer sr;       // przypnij SpriteRenderer z PlayerVisual
+
+    [Header("Coyote time (opcjonalnie)")]
+    public float coyoteTime = 0.08f; // 80 ms na spóźniony skok
+    private float coyoteTimer;
 
     private Rigidbody2D rb;
-    private float moveInput;   // -1..1
+    private float moveInput;         // -1..1
     private bool wantJump;
     private bool isGrounded;
 
-    // --- zmienne dla variable jump ---
-    private bool isJumping;          // jesteśmy w fazie skoku (po starcie)
-    private float jumpHoldTimer;     // ile jeszcze podtrzymania zostało
-    private float defaultGravity;    // zapamiętana grawitacja
-    private bool prevGrounded;       // do wykrycia lądowania (reset triggerów)
-    
-    // --- zmienne UI w grze --
-    [Header("In-Game UI")]
-    [SerializeField] private UIManager uiManager;   // <- przypnij ręcznie obiekt GameManager ze sceny
+    // variable jump
+    private bool isJumping;
+    private float jumpHoldTimer;
+    private float defaultGravity;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // awaryjne wyszukanie, jeśli zapomniałeś przypiąć
         if (!anim)
             anim = transform.Find("PlayerVisual")?.GetComponent<Animator>() ?? GetComponentInChildren<Animator>(true);
         if (!sr)
@@ -55,33 +53,23 @@ public class PlayerController2D : MonoBehaviour
 
     void Start()
     {
-        // TWARDY CHECK: jeśli Animator jest, ale nie ma kontrolera – wyłączamy i logujemy
-        if (!anim)
-        {
-            Debug.LogError("PlayerController2D: Brak referencji do Animator (przypnij z PlayerVisual). Wyłączam skrypt.");
-            enabled = false; return;
-        }
-        if (anim.runtimeAnimatorController == null)
-        {
-            Debug.LogError($"PlayerController2D: Animator '{anim.name}' nie ma przypiętego Controller. Wyłączam skrypt.");
-            enabled = false; return;
-        }
-        if (!sr)
-        {
-            Debug.LogError("PlayerController2D: Brak referencji do SpriteRenderer (przypnij z PlayerVisual). Wyłączam skrypt.");
-            enabled = false; return;
-        }
+        if (!anim) { Debug.LogError("PlayerController2D: brak Animator (PlayerVisual)."); enabled = false; return; }
+        if (anim.runtimeAnimatorController == null) { Debug.LogError("Animator nie ma Controller."); enabled = false; return; }
+        if (!sr) { Debug.LogError("PlayerController2D: brak SpriteRenderer (PlayerVisual)."); enabled = false; return; }
     }
 
     void Update()
     {
         bool wasGrounded = isGrounded;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = CheckGrounded(); // 🔷 prostokątny groundcheck
         anim.SetBool("IsGrounded", isGrounded);
+
+        // coyote timer aktualizowany w Update (ramki wej/wyj z ziemi)
+        if (isGrounded) coyoteTimer = coyoteTime;
+        else            coyoteTimer -= Time.deltaTime;
 
         if (!wasGrounded && isGrounded)
         {
-            // wylądowaliśmy -> czyść wybrane triggery
             anim.ResetTrigger("Jump");
             anim.ResetTrigger("AttackAir");
             anim.ResetTrigger("AttackGround");
@@ -94,95 +82,85 @@ public class PlayerController2D : MonoBehaviour
             if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)  moveInput -= 1f;
             if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput += 1f;
 
-            // start skoku (krawędź naciśnięcia i tylko na ziemi)
-            if (kb.spaceKey.wasPressedThisFrame && isGrounded)
+            // skok: pozwól także w coyote time
+            if (kb.spaceKey.wasPressedThisFrame && (isGrounded || coyoteTimer > 0f))
                 wantJump = true;
 
-            // UCIĘCIE skoku: gdy puścisz spację podczas wznoszenia
+            // ucięcie skoku
             if (kb.spaceKey.wasReleasedThisFrame && rb.linearVelocity.y > 0f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
-                jumpHoldTimer = 0f;   // kończymy podtrzymanie
+                jumpHoldTimer = 0f;
                 isJumping = false;
             }
         }
 
-        if (moveInput != 0f)
-            sr.flipX = moveInput < 0f;
-
-        prevGrounded = wasGrounded;
+        if (moveInput != 0f) sr.flipX = moveInput < 0f;
     }
 
     void FixedUpdate()
     {
-        // --- GRUNT ---
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = CheckGrounded(); // 🔷 prostokąt także w Fixed
 
-        // --- RUCH POZIOMY ---
+        // ruch poziomy
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // --- SKOK (start) ---
-        if (wantJump && isGrounded)
+        // start skoku (uwzględnia coyote)
+        if (wantJump && (isGrounded || coyoteTimer > 0f))
         {
             anim.SetTrigger("Jump");
 
-            // impuls startowy
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
             isJumping = true;
             jumpHoldTimer = maxJumpHoldTime;
+
+            // po starcie skoku wyzeruj coyote, żeby nie skakał wielokrotnie
+            coyoteTimer = 0f;
         }
         wantJump = false;
 
-        // --- PODTRZYMANIE skoku (hold) ---
+        // podtrzymanie skoku
         bool holdingJump = Keyboard.current?.spaceKey.isPressed ?? false;
         if (isJumping && holdingJump && jumpHoldTimer > 0f && rb.linearVelocity.y > 0f)
         {
             rb.AddForce(Vector2.up * jumpHoldForce * Time.fixedDeltaTime, ForceMode2D.Force);
             jumpHoldTimer -= Time.fixedDeltaTime;
         }
-        // koniec fazy hold, gdy zaczynasz spadać lub puściłeś
         if (rb.linearVelocity.y <= 0f || !holdingJump)
             isJumping = false;
 
-        // --- MODYFIKACJA GRAWITACJI dla lepszego feelingu ---
+        // modyfikacja grawitacji
         if (rb.linearVelocity.y < -0.01f)
-        {
-            // szybciej opadaj
             rb.gravityScale = defaultGravity * fallGravityMultiplier;
-        }
         else if (rb.linearVelocity.y > 0.01f && !holdingJump)
-        {
-            // jeśli wznosisz się, ale nie trzymasz skoku – szybciej "gaśnie"
             rb.gravityScale = defaultGravity * lowJumpGravityMultiplier;
-        }
         else
-        {
             rb.gravityScale = defaultGravity;
-        }
 
-        // --- PARAMETRY ANIMATORA ---
+        // parametry animacji
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         anim.SetFloat("YVelocity", rb.linearVelocity.y);
         anim.SetBool("IsGrounded", isGrounded);
     }
 
+    // 🔷 PROSTOKĄTNY GROUND CHECK (OverlapBox)
+    bool CheckGrounded()
+    {
+        if (!groundCheck) return false;
+        Vector2 center = (Vector2)groundCheck.position + groundBoxOffset;
+        return Physics2D.OverlapBox(center, groundBoxSize, 0f, groundLayer) != null;
+    }
+
+    // Gizmo prostokąta
     void OnDrawGizmosSelected()
     {
         if (!groundCheck) return;
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Coin"))
-            uiManager.coinCount++;
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            uiManager.deathCount++;
-            uiManager.deathText.GetComponent<Animator>().SetTrigger("playerDied");
-        }
+        Vector3 c = groundCheck.position + (Vector3)groundBoxOffset;
+        Gizmos.matrix = Matrix4x4.TRS(c, Quaternion.identity, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(groundBoxSize.x, groundBoxSize.y, 0f));
+        Gizmos.matrix = Matrix4x4.identity;
     }
 }
