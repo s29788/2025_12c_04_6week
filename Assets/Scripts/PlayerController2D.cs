@@ -15,17 +15,17 @@ public class PlayerController2D : MonoBehaviour
     public float fallGravityMultiplier = 1.6f;
     public float lowJumpGravityMultiplier = 1.2f;
 
-    [Header("Ground check (prostokąt)")]
-    public Transform groundCheck;                // umieść na środku stóp
-    public Vector2 groundBoxSize = new Vector2(0.6f, 0.08f); // szerokość x wysokość
-    public Vector2 groundBoxOffset = Vector2.zero;           // ewentualne przesunięcie
+    [Header("Ground check (3 kółka)")]
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.18f;        // promień kółka
+    public float groundCheckSideOffset = 0.25f;    // jak daleko od środka są lewe/prawe kółko
     public LayerMask groundLayer;
 
     [Header("Wizual (PRZYPNIJ z PlayerVisual)")]
     [SerializeField] private Animator anim;           // przypnij Animator z PlayerVisual
     [SerializeField] private SpriteRenderer sr;       // przypnij SpriteRenderer z PlayerVisual
 
-    [Header("Coyote time (opcjonalnie)")]
+    [Header("Coyote time")]
     public float coyoteTime = 0.08f; // 80 ms na spóźniony skok
     private float coyoteTimer;
 
@@ -33,7 +33,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private UIManager uiManager;
 
     private Rigidbody2D rb;
-    private float moveInput;         // -1..1
+    private float moveInput;
     private bool wantJump;
     private bool isGrounded;
 
@@ -56,18 +56,33 @@ public class PlayerController2D : MonoBehaviour
 
     void Start()
     {
-        if (!anim) { Debug.LogError("PlayerController2D: brak Animator (PlayerVisual)."); enabled = false; return; }
-        if (anim.runtimeAnimatorController == null) { Debug.LogError("Animator nie ma Controller."); enabled = false; return; }
-        if (!sr) { Debug.LogError("PlayerController2D: brak SpriteRenderer (PlayerVisual)."); enabled = false; return; }
+        if (!anim)
+        {
+            Debug.LogError("PlayerController2D: brak Animator (PlayerVisual).");
+            enabled = false;
+            return;
+        }
+        if (anim.runtimeAnimatorController == null)
+        {
+            Debug.LogError("Animator nie ma Controller.");
+            enabled = false;
+            return;
+        }
+        if (!sr)
+        {
+            Debug.LogError("PlayerController2D: brak SpriteRenderer (PlayerVisual).");
+            enabled = false;
+            return;
+        }
     }
 
     void Update()
     {
         bool wasGrounded = isGrounded;
-        isGrounded = CheckGrounded(); // 🔷 prostokątny groundcheck
+        isGrounded = CheckGrounded();
         anim.SetBool("IsGrounded", isGrounded);
 
-        // coyote timer aktualizowany w Update (ramki wej/wyj z ziemi)
+        // coyote timer – odnawiamy, gdy stoimy na ziemi
         if (isGrounded) coyoteTimer = coyoteTime;
         else            coyoteTimer -= Time.deltaTime;
 
@@ -85,7 +100,7 @@ public class PlayerController2D : MonoBehaviour
             if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)  moveInput -= 1f;
             if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput += 1f;
 
-            // skok: pozwól także w coyote time
+            // skok – pozwól zarówno na ziemi, jak i w coyote time
             if (kb.spaceKey.wasPressedThisFrame && (isGrounded || coyoteTimer > 0f))
                 wantJump = true;
 
@@ -98,16 +113,18 @@ public class PlayerController2D : MonoBehaviour
             }
         }
 
-        if (moveInput != 0f) sr.flipX = moveInput < 0f;
+        if (moveInput != 0f)
+            sr.flipX = moveInput < 0f;
     }
 
     void FixedUpdate()
     {
-        isGrounded = CheckGrounded(); // 🔷
+        isGrounded = CheckGrounded();
 
-
+        // ruch poziomy
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
+        // start skoku (ziemia lub coyote)
         if (wantJump && (isGrounded || coyoteTimer > 0f))
         {
             anim.SetTrigger("Jump");
@@ -118,10 +135,11 @@ public class PlayerController2D : MonoBehaviour
             isJumping = true;
             jumpHoldTimer = maxJumpHoldTime;
 
-            coyoteTimer = 0f;
+            coyoteTimer = 0f; // nie skaczemy wielokrotnie z jednego „coyote”
         }
         wantJump = false;
 
+        // podtrzymanie skoku
         bool holdingJump = Keyboard.current?.spaceKey.isPressed ?? false;
         if (isJumping && holdingJump && jumpHoldTimer > 0f && rb.linearVelocity.y > 0f)
         {
@@ -131,6 +149,7 @@ public class PlayerController2D : MonoBehaviour
         if (rb.linearVelocity.y <= 0f || !holdingJump)
             isJumping = false;
 
+        // modyfikacja grawitacji
         if (rb.linearVelocity.y < -0.01f)
             rb.gravityScale = defaultGravity * fallGravityMultiplier;
         else if (rb.linearVelocity.y > 0.01f && !holdingJump)
@@ -138,38 +157,62 @@ public class PlayerController2D : MonoBehaviour
         else
             rb.gravityScale = defaultGravity;
 
+        // parametry animacji
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         anim.SetFloat("YVelocity", rb.linearVelocity.y);
         anim.SetBool("IsGrounded", isGrounded);
     }
 
+    // 🔵 3× OverlapCircle – środek, lewa, prawa stopa
     bool CheckGrounded()
     {
         if (!groundCheck) return false;
-        Vector2 center = (Vector2)groundCheck.position + groundBoxOffset;
-        return Physics2D.OverlapBox(center, groundBoxSize, 0f, groundLayer) != null;
+
+        Vector2 basePos = groundCheck.position;
+
+        // środkowe kółko
+        if (Physics2D.OverlapCircle(basePos, groundCheckRadius, groundLayer))
+            return true;
+
+        // lewe kółko
+        Vector2 left = basePos + Vector2.left * groundCheckSideOffset;
+        if (Physics2D.OverlapCircle(left, groundCheckRadius, groundLayer))
+            return true;
+
+        // prawe kółko
+        Vector2 right = basePos + Vector2.right * groundCheckSideOffset;
+        if (Physics2D.OverlapCircle(right, groundCheckRadius, groundLayer))
+            return true;
+
+        return false;
     }
+
     void OnDrawGizmosSelected()
     {
         if (!groundCheck) return;
         Gizmos.color = Color.yellow;
-        Vector3 c = groundCheck.position + (Vector3)groundBoxOffset;
-        Gizmos.matrix = Matrix4x4.TRS(c, Quaternion.identity, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(groundBoxSize.x, groundBoxSize.y, 0f));
-        Gizmos.matrix = Matrix4x4.identity;
+
+        Vector3 basePos = groundCheck.position;
+        Gizmos.DrawWireSphere(basePos, groundCheckRadius);
+
+        Vector3 left = basePos + Vector3.left * groundCheckSideOffset;
+        Vector3 right = basePos + Vector3.right * groundCheckSideOffset;
+
+        Gizmos.DrawWireSphere(left, groundCheckRadius);
+        Gizmos.DrawWireSphere(right, groundCheckRadius);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Coin"))
+            {
                 uiManager.coinCount++;
+                uiManager.coinText.GetComponent<Animator>().SetTrigger("coinCollected");
+            }
             if (other.gameObject.CompareTag("Enemy"))
             {
                 uiManager.deathCount++;
                 uiManager.deathText.GetComponent<Animator>().SetTrigger("playerDied");
             }
         }
-
-
-
 }

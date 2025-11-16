@@ -678,11 +678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -249.53006
+      value: -249.53008
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1004,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1797,11 +1797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: 200.00003
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -422.55002
+      value: -422.55005
       objectReference: {fileID: 0}
     - target: {fileID: 7671098002178953502, guid: 1d006d832d5de294195e169c0a1e20c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5491,8 +5491,8 @@ MonoBehaviour:
   fallGravityMultiplier: 1.6
   lowJumpGravityMultiplier: 1.2
   groundCheck: {fileID: 1708412355}
-  groundBoxSize: {x: 0.6, y: 0.08}
-  groundBoxOffset: {x: 0, y: 0}
+  groundCheckRadius: 0.18
+  groundCheckSideOffset: 0.25
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
