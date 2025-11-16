@@ -29,6 +29,9 @@ public class PlayerController2D : MonoBehaviour
     public float coyoteTime = 0.08f; // 80 ms na spóźniony skok
     private float coyoteTimer;
 
+    [Header("In-Game UI")]
+    [SerializeField] private UIManager uiManager;
+
     private Rigidbody2D rb;
     private float moveInput;         // -1..1
     private bool wantJump;
@@ -100,12 +103,11 @@ public class PlayerController2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        isGrounded = CheckGrounded(); // 🔷 prostokąt także w Fixed
+        isGrounded = CheckGrounded(); // 🔷
 
-        // ruch poziomy
+
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // start skoku (uwzględnia coyote)
         if (wantJump && (isGrounded || coyoteTimer > 0f))
         {
             anim.SetTrigger("Jump");
@@ -116,12 +118,10 @@ public class PlayerController2D : MonoBehaviour
             isJumping = true;
             jumpHoldTimer = maxJumpHoldTime;
 
-            // po starcie skoku wyzeruj coyote, żeby nie skakał wielokrotnie
             coyoteTimer = 0f;
         }
         wantJump = false;
 
-        // podtrzymanie skoku
         bool holdingJump = Keyboard.current?.spaceKey.isPressed ?? false;
         if (isJumping && holdingJump && jumpHoldTimer > 0f && rb.linearVelocity.y > 0f)
         {
@@ -131,7 +131,6 @@ public class PlayerController2D : MonoBehaviour
         if (rb.linearVelocity.y <= 0f || !holdingJump)
             isJumping = false;
 
-        // modyfikacja grawitacji
         if (rb.linearVelocity.y < -0.01f)
             rb.gravityScale = defaultGravity * fallGravityMultiplier;
         else if (rb.linearVelocity.y > 0.01f && !holdingJump)
@@ -139,21 +138,17 @@ public class PlayerController2D : MonoBehaviour
         else
             rb.gravityScale = defaultGravity;
 
-        // parametry animacji
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         anim.SetFloat("YVelocity", rb.linearVelocity.y);
         anim.SetBool("IsGrounded", isGrounded);
     }
 
-    // 🔷 PROSTOKĄTNY GROUND CHECK (OverlapBox)
     bool CheckGrounded()
     {
         if (!groundCheck) return false;
         Vector2 center = (Vector2)groundCheck.position + groundBoxOffset;
         return Physics2D.OverlapBox(center, groundBoxSize, 0f, groundLayer) != null;
     }
-
-    // Gizmo prostokąta
     void OnDrawGizmosSelected()
     {
         if (!groundCheck) return;
@@ -163,4 +158,18 @@ public class PlayerController2D : MonoBehaviour
         Gizmos.DrawWireCube(Vector3.zero, new Vector3(groundBoxSize.x, groundBoxSize.y, 0f));
         Gizmos.matrix = Matrix4x4.identity;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Coin"))
+                uiManager.coinCount++;
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                uiManager.deathCount++;
+                uiManager.deathText.GetComponent<Animator>().SetTrigger("playerDied");
+            }
+        }
+
+
+
 }

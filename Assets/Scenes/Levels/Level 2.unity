@@ -5499,6 +5499,7 @@ MonoBehaviour:
   anim: {fileID: 776870560}
   sr: {fileID: 776870561}
   coyoteTime: 0.08
+  uiManager: {fileID: 1567944032}
 --- !u!61 &1451066425
 BoxCollider2D:
   m_ObjectHideFlags: 0
